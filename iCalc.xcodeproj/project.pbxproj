@@ -77,11 +77,8 @@
 		C786B8FB1AF99035005DC703 /* iCalc */ = {
 			isa = PBXGroup;
 			children = (
-				C786B8FE1AF99035005DC703 /* AppDelegate.swift */,
 				C786B9001AF99035005DC703 /* ViewController.swift */,
 				C786B9021AF99035005DC703 /* Main.storyboard */,
-				C786B9051AF99035005DC703 /* Images.xcassets */,
-				C786B9071AF99035005DC703 /* LaunchScreen.xib */,
 				C786B8FC1AF99035005DC703 /* Supporting Files */,
 			);
 			path = iCalc;
@@ -90,6 +87,9 @@
 		C786B8FC1AF99035005DC703 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C786B8FE1AF99035005DC703 /* AppDelegate.swift */,
+				C786B9071AF99035005DC703 /* LaunchScreen.xib */,
+				C786B9051AF99035005DC703 /* Images.xcassets */,
 				C786B8FD1AF99035005DC703 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -411,6 +411,7 @@
 				C786B91A1AF99035005DC703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C786B91B1AF99035005DC703 /* Build configuration list for PBXNativeTarget "iCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				C786B91D1AF99035005DC703 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
