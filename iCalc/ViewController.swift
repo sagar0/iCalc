@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var history: UILabel!
     
     var userIsInTheMiddleOfTypingANumber = false
+    
+    var brain = CalculatorBrain()
+    
     var decimalPointSeen = false
 
     @IBAction func appendDigit(sender: UIButton) {
@@ -38,47 +41,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func operate(sender: UIButton) {
-        let operation = sender.currentTitle!
         if userIsInTheMiddleOfTypingANumber {
             enter()
         }
-        switch operation {
-        case "×": performBinaryOperation { $0 * $1 }
-        case "÷": performBinaryOperation { $1 / $0 }
-        case "+": performBinaryOperation { $0 + $1 }
-        case "−": performBinaryOperation { $1 - $0 }
-        case "√": performUnaryOperation { sqrt($0) }
-        case "sin": performUnaryOperation { sin($0) }
-        case "cos": performUnaryOperation { cos($0) }
-        case "π": operandStack.append(M_PI)
-        default: break
-        }
+        let operation = sender.currentTitle!
+        
         
         history.text = history.text! + operation + " "
     }
     
-    func performBinaryOperation(operation: (Double, Double) -> Double) {
-        if operandStack.count >= 2 {
-            displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
-            enter()
-        }
-    }
-    
-    func performUnaryOperation(operation: Double -> Double) {
-        if operandStack.count >= 1 {
-            displayValue = operation(operandStack.removeLast())
-            enter()
-        }
-    }
-    
-    var operandStack = Array<Double>()
-    
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
+        
         decimalPointSeen = false
         history.text = history.text! + " "
-        operandStack.append(displayValue)
-        println("operandStack = \(operandStack)")
+        
+        if let result = brain.pushOperand(displayValue) {
+            displayValue = result
+        } else {
+            displayValue = 0
+        }
     }
     
     var displayValue: Double {
