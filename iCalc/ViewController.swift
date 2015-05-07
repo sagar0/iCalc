@@ -22,13 +22,13 @@ class ViewController: UIViewController {
     @IBAction func appendDigit(sender: UIButton) {
         let digit = sender.currentTitle!
         
-        if (digit == ".") {
-            if (!decimalPointSeen) {
-                decimalPointSeen = true
-            } else {
-                return
-            }
-        }
+//        if (digit == ".") {
+//            if (!decimalPointSeen) {
+//                decimalPointSeen = true
+//            } else {
+//                return
+//            }
+//        }
         
         if userIsInTheMiddleOfTypingANumber {
             display.text = display.text! + digit
@@ -37,17 +37,24 @@ class ViewController: UIViewController {
             userIsInTheMiddleOfTypingANumber = true
         }
         
-        history.text = history.text! + digit
+//        history.text = history.text! + digit
     }
     
     @IBAction func operate(sender: UIButton) {
         if userIsInTheMiddleOfTypingANumber {
             enter()
         }
-        let operation = sender.currentTitle!
+
+        if let operation = sender.currentTitle {
+            if let result = brain.performOperation(operation) {
+                displayValue = result
+            } else {
+                displayValue = 0
+            }
+        }
         
         
-        history.text = history.text! + operation + " "
+//        history.text = history.text! + operation! + " "
     }
     
     @IBAction func enter() {
