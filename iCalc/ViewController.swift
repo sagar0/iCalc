@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var history: UILabel!
     
     var userIsInTheMiddleOfTypingANumber = false
     var decimalPointSeen = false
@@ -32,6 +33,8 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTypingANumber = true
         }
+        
+        history.text = history.text! + digit
     }
     
     @IBAction func operate(sender: UIButton) {
@@ -47,8 +50,11 @@ class ViewController: UIViewController {
         case "√": performUnaryOperation { sqrt($0) }
         case "sin": performUnaryOperation { sin($0) }
         case "cos": performUnaryOperation { cos($0) }
+        case "π": operandStack.append(M_PI)
         default: break
         }
+        
+        history.text = history.text! + operation + " "
     }
     
     func performBinaryOperation(operation: (Double, Double) -> Double) {
@@ -70,6 +76,7 @@ class ViewController: UIViewController {
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
         decimalPointSeen = false
+        history.text = history.text! + " "
         operandStack.append(displayValue)
         println("operandStack = \(operandStack)")
     }
