@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5D432CEE-C8A6-4574-AFF3-029FA29747AB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iCalc</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C5F99E036A1375B3FB284C384FE1E442BA0A83DD</key>
+		<string>https://github.com/sagarvemuri/iCalc.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iCalc.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C5F99E036A1375B3FB284C384FE1E442BA0A83DD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sagarvemuri/iCalc.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C5F99E036A1375B3FB284C384FE1E442BA0A83DD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C5F99E036A1375B3FB284C384FE1E442BA0A83DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iCalc</string>
+		</dict>
+	</array>
+</dict>
+</plist>
