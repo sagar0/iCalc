@@ -54,6 +54,7 @@ class ViewController: UIViewController {
             }
         }
         
+
         
 //        history.text = history.text! + operation! + " "
     }
